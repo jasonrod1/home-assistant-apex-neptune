@@ -1,12 +1,9 @@
 {
-  "name": "Home Assistant Apex Monitor",
+  "name": "Apex Monitor",
+  "content_in_root": false,
+  "domains": ["sensor"],
+  "country": "us",
+  "homeassistant": "2023.0.0",
   "render_readme": true,
-  "description": "Real-time Neptune Apex monitoring integration for Home Assistant",
-  "resources": [],
-  "domain": "apex_monitor",
-  "documentation": "https://github.com/jasonrod1/home-assistant-apex-neptune",
-  "source": "github://jasonrod1/home-assistant-apex-neptune",
-  "requirements": [],
-  "version": "1.0.0",
-  "category": "integration"
+  "filename": "custom_components/apex_monitor/manifest.json"
 }
