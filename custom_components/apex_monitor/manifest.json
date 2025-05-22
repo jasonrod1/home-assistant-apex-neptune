@@ -8,9 +8,6 @@
   "codeowners": ["@jasonrod1"],
   "config_flow": true,
   "iot_class": "local_polling",
-  "requirements": [],
-  "branding": {
-    "logo": "logo.png",
-    "icon": "icon.png"
+  "requirements": []
   }
 }
