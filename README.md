@@ -1,5 +1,5 @@
 # Home Assistant Apex Monitor
-
+ 
 This custom integration pulls real-time probe data from a Neptune Apex system and makes it available in Home Assistant as sensors.
 
 ## Features
