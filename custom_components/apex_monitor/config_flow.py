@@ -6,7 +6,7 @@ from .const import DOMAIN
 DATA_SCHEMA = vol.Schema({
     vol.Required("ip_address"): str,
     vol.Optional("username", default="admin"): str,
-    vol.Optional("password"): str,
+    vol.Optional("password", default=""): str,
 })
 
 class ApexMonitorConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
