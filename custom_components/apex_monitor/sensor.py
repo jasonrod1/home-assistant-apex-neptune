@@ -3,10 +3,14 @@ import xml.etree.ElementTree as ET
 from homeassistant.helpers.entity import Entity
 from .const import SENSOR_MAP
 
-def setup_platform(hass, config, add_entities, discovery_info=None):
-    apex_url = config.get("url", "http://192.168.1.235/cgi-bin/status.xml")
-    sensors = [ApexSensor(apex_url, probe, *info) for probe, info in SENSOR_MAP.items()]
-    add_entities(sensors, True)
+async def async_setup_entry(hass, config_entry, async_add_entities):
+    ip = config_entry.data.get("ip_address")
+    username = config_entry.data.get("username")
+    password = config_entry.data.get("password")
+    url = f"http://{ip}/cgi-bin/status.xml"
+
+    sensors = [ApexSensor(url, probe, *info) for probe, info in SENSOR_MAP.items()]
+    async_add_entities(sensors, True)
 
 class ApexSensor(Entity):
     def __init__(self, url, probe_name, friendly_name, unit):
