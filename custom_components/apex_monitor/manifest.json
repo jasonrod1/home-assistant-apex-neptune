@@ -3,9 +3,9 @@
   "name": "Apex Monitor",
   "version": "1.0.0",
   "documentation": "https://github.com/jasonrod1/home-assistant-apex-neptune",
-  "requirements": [],
   "dependencies": [],
   "codeowners": ["@jasonrod1"],
   "config_flow": true,
-  "iot_class": "local_polling"
+  "iot_class": "local_polling",
+  "requirements": []
 }
