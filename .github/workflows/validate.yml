@@ -1,0 +1,43 @@
+name: Validate Integration
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  hassfest:
+    name: Hassfest Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Grab your code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2) Auto-normalize manifest.json key order & encoding
+      - name: Normalize manifest.json
+        run: |
+          python3 - << 'EOF'
+          import json
+          from pathlib import Path
+
+          mf = Path("custom_components/apex_monitor/manifest.json")
+          data = json.loads(mf.read_text(encoding="utf-8"))
+
+          # Build new object with correct order: domain, name, version, then alpha rest
+          ordered = {
+            "domain": data["domain"],
+            "name": data["name"],
+            "version": data["version"],
+          }
+          for key in sorted(k for k in data if k not in ordered):
+            ordered[key] = data[k]
+
+          # Write back as UTF-8 without BOM, 2-space indent
+          mf.write_text(json.dumps(ordered, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+          EOF
+
+      # 3) Run the official Hassfest check
+      - name: Run Hassfest
+        uses: home-assistant/actions/hassfest@master
