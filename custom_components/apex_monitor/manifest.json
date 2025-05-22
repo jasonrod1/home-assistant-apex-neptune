@@ -1,0 +1,9 @@
+{
+  "domain": "apex_monitor",
+  "name": "Neptune Apex Monitor",
+  "version": "1.0.0",
+  "documentation": "https://github.com/jasonrod1/home-assistant-apex-neptune",
+  "requirements": [],
+  "codeowners": ["@jasonrod1"],
+  "iot_class": "local_polling"
+}
