@@ -1,0 +1,8 @@
+{
+  "name": "Apex Monitor",
+  "content_in_root": false,
+  "domains": ["sensor"],
+  "zip_release": false,
+  "country": "US",
+  "homeassistant": "2023.0.0"
+}
