@@ -1,12 +1,16 @@
 {
   "domain": "apex_monitor",
   "name": "Apex Monitor",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "documentation": "https://github.com/jasonrod1/home-assistant-apex-neptune",
   "issue_tracker": "https://github.com/jasonrod1/home-assistant-apex-neptune/issues",
   "dependencies": [],
   "codeowners": ["@jasonrod1"],
   "config_flow": true,
   "iot_class": "local_polling",
-  "requirements": []
+  "requirements": [],
+  "branding": {
+    "logo": "logo.png",
+    "icon": "icon.png"
+  }
 }
